@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class MainMenu : MonoBehaviour
     public void HandlePlayButtonOnClickEvent()
     {
         AudioManager.Play(AudioClipName.PlayClick);
-        MenuManager.GoToMenu(MenuName.Pause);
+        MenuManager.GoToMenu(MenuName.GamePlay);
     }
 
     ///// <summary>
