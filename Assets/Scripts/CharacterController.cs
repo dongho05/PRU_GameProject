@@ -10,13 +10,21 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        transform.position += new Vector3(horizontal * Time.deltaTime * moveSpeed, vertical * Time.deltaTime * moveSpeed, 0);
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (horizontal > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (horizontal < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+
     }
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    }
+    
 
 
 }
