@@ -41,6 +41,9 @@ public static class MenuManager
                 // instantiate prefab
                 Object.Instantiate(Resources.Load("PauseMenu"));
                 break;
+            case MenuName.GamePlay:
+                SceneManager.LoadScene("SampleScene");
+                break;
         }
 	}
 }

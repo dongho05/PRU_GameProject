@@ -10,9 +10,7 @@ public class MainMenu : MonoBehaviour
     public void HandlePlayButtonOnClickEvent()
     {
         AudioManager.Play(AudioClipName.PlayClick);
-        MenuManager.GoToMenu(MenuName.Pause);
-        //SceneManager.LoadScene("Assets/Scenes/" + "SampleScene" + ".unity");
-        //EditorSceneManager.OpenScene("Assets/Scenes/" + "SampleScene" + ".unity");
+        MenuManager.GoToMenu(MenuName.GamePlay);
     }
 
     ///// <summary>
