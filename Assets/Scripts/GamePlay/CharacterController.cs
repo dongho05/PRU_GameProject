@@ -3,50 +3,60 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    
-    public float moveSpeed = 5f;
-    public Rigidbody2D rb;
-    public int dir = 0;
-    Vector2 movement;
 
-    public Animator animator;
-
-    // Update is called once per frame
-    void Update()
+    public Vector2 inputVector2;
+    [SerializeField]
+    private float speed = 4;
+    [SerializeField]
+    private Transform weapon1;
+    [SerializeField]
+    GameObject prefabBullet;
+    Rigidbody2D rigid;
+    SpriteRenderer spriteRenderer;
+    Animator animator;
+    public AudioSource shootAudio;
+    int vector = 1;
+    public Vector3 offset = new Vector3(0, 0.1f, 0);
+    void Awake()
     {
-
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        move();
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        rigid = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
-    //void FixedUpdate()
-    //{
-    //    rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-    //}
 
-
-
-    void move()
+    void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        transform.position += new Vector3(horizontal * Time.deltaTime * moveSpeed, vertical * Time.deltaTime * moveSpeed, 0);
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        inputVector2.x = Input.GetAxisRaw("Horizontal");
+        inputVector2.y = Input.GetAxisRaw("Vertical");
 
-        if (horizontal > 0 && dir == 1)
+        // shoot as appropriate
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.Rotate(0, 180f, 0);
-            dir = 0;
-
+            GameObject bullet = Instantiate(prefabBullet, transform.position - transform.rotation * offset, Quaternion.identity);
+            bullet.transform.eulerAngles = new Vector3(0, 0, -90);
+            Rigidbody2D rg = bullet.GetComponent<Rigidbody2D>();
+            rg.AddForce(weapon1.right * vector * 1000f);
+            shootAudio.Play();
+            //shootSoundEffect.Play();
         }
-        else if (horizontal < 0 && dir==0)
+    }
+
+    private void FixedUpdate()
+    {
+        Vector2 newVec = inputVector2.normalized * speed * Time.deltaTime;
+        rigid.MovePosition(rigid.position + newVec);
+    }
+    private void LateUpdate()
+    {
+        animator.SetFloat("Speed", inputVector2.magnitude);
+        if (inputVector2.x != 0)
         {
-            transform.Rotate(0, 180f, 0);
-            dir = 1;
+            GameObject weapon = GameObject.FindGameObjectWithTag("Weapon");
+            SpriteRenderer sprite = weapon.GetComponent<SpriteRenderer>();
+            spriteRenderer.flipX = inputVector2.x < 0;
+            sprite.flipX = inputVector2.x < 0;
+            vector = inputVector2.x < 0 ? -1 : 1;
         }
     }
 
