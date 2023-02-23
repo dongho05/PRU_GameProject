@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 20659845231581500}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,10 +168,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b3f2dc1754d4b4193bb91a7f2d7703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: 7622436363486633243}
-  dir: 0
-  animator: {fileID: 7622436363486633252}
+  inputVector2: {x: 0, y: 0}
+  speed: 4
+  weapon1: {fileID: 7622436363533135800}
+  prefabBullet: {fileID: 3200121676172083947, guid: 88eb92e9150b28748aac34ee555b9f76, type: 3}
+  shootAudio: {fileID: 8300000, guid: 5f8e7645ba6b30a4b943784531d325cc, type: 3}
+  offset: {x: 0, y: 0.1, z: 0}
 --- !u!1 &7622436363533135803
 GameObject:
   m_ObjectHideFlags: 0
