@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public Button volBtn;
     // Start is called before the first frame update
     public void HandlePlayButtonOnClickEvent()
     {
@@ -25,6 +27,14 @@ public class MainMenu : MonoBehaviour
     /// <summary>
     /// Handles the on click event from the quit button
     /// </summary>
+    /// 
+
+    public void HandleVolumeButtonOnClickEvent()
+    {
+        AudioListener.volume = 0;
+        volBtn.image.color = Color.gray;
+    }
+
     public void HandleQuitButtonOnClickEvent()
     {
         AudioManager.Play(AudioClipName.ExitClick);
