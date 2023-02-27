@@ -45,5 +45,6 @@ public static class MenuManager
                 SceneManager.LoadScene("SampleScene");
                 break;
         }
+        
 	}
 }

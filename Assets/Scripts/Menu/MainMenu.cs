@@ -29,10 +29,29 @@ public class MainMenu : MonoBehaviour
     /// </summary>
     /// 
 
+    public void HandlePauseButtonOnClickEvent()
+    {
+        AudioManager.Play(AudioClipName.ExitClick);
+        MenuManager.GoToMenu(MenuName.Pause);
+    }
+
+
+
     public void HandleVolumeButtonOnClickEvent()
     {
-        AudioListener.volume = 0;
-        volBtn.image.color = Color.gray;
+        if(AudioListener.volume == 0)
+        {
+            AudioListener.volume = 1f;
+            volBtn.image.color = Color.white;
+            Debug.Log("On");
+        }
+        else if(AudioListener.volume == 1f)
+        {
+            AudioListener.volume = 0;
+            volBtn.image.color = Color.gray;
+            Debug.Log("Off");
+        }
+        Debug.Log(AudioListener.volume);
     }
 
     public void HandleQuitButtonOnClickEvent()
