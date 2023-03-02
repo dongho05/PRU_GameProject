@@ -6,4 +6,5 @@ public enum AudioClipName
     ButtonClick,
     ExitClick,
     PlayClick,
+    GunSound,
 }

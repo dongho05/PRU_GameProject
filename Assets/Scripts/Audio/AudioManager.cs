@@ -35,6 +35,8 @@ public static class AudioManager
              Resources.Load<AudioClip>("ExitClick"));
         audioClips.Add(AudioClipName.PlayClick,
              Resources.Load<AudioClip>("PlayClick"));
+        audioClips.Add(AudioClipName.GunSound,
+             Resources.Load<AudioClip>("GunSound"));
     }
 
     /// <summary>
