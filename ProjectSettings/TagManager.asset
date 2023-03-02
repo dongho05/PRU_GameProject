@@ -8,6 +8,7 @@ TagManager:
   - Weapon
   - Enemy
   - bullet
+  - Wall
   layers:
   - Default
   - TransparentFX

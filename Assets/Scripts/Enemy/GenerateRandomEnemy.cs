@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GenerateRandomEnemy : MonoBehaviour
@@ -6,17 +7,27 @@ public class GenerateRandomEnemy : MonoBehaviour
 
     [SerializeField]
     GameObject prefabCircle;
+    [SerializeField]
+    GameObject prefabEnemyAlpha;
+    [SerializeField]
+    GameObject prefabEnemyDelta;
+    //[SerializeField]
+    //GameObject prefabEnemyBoss;
     Timer timer;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = gameObject.AddComponent<Timer>();
-        timer.Duration = 2;
+        timer.Duration = 7;
         timer.Run();
+        circles.Add(prefabEnemyAlpha);
+        circles.Add(prefabCircle);
+        circles.Add(prefabEnemyDelta);
     }
 
     List<GameObject> circles = new List<GameObject>();
+
     // Update is called once per frame
     void Update()
     {
@@ -38,10 +49,9 @@ public class GenerateRandomEnemy : MonoBehaviour
             float screenRight = upperRightCornerWorld.x;
             float screenTop = upperRightCornerWorld.y;
             float screenBottom = lowerLeftCornerWorld.y;
-
-
-            circles.Add(Instantiate<GameObject>(prefabCircle, new Vector3(Random.Range(screenLeft, screenRight), Random.Range(screenBottom, screenTop), screenZ), Quaternion.identity));
-            timer.Duration = 2;
+            int prefabIndex = Random.Range(0, circles.Count);
+            circles.Add(Instantiate<GameObject>(circles.ElementAt<GameObject>(prefabIndex), new Vector3(Random.Range(screenLeft, screenRight), Random.Range(screenBottom, screenTop), screenZ), Quaternion.identity));
+            timer.Duration = 7;
             timer.Run();
         }
 
