@@ -51,6 +51,7 @@ public class EnemyBulletScript : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
     

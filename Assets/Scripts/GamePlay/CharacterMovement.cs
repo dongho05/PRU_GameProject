@@ -49,10 +49,13 @@ public class CharacterMovement : MonoBehaviour
     {
         currentHealth -= damage;
         UpdateHealthBar();
+        if(currentHealth <= 0) {
+            Destroy(gameObject);
+        }
     }
 
     void UpdateHealthBar()
-    {
+    { 
         healthSlider.value = currentHealth;
     }
 
