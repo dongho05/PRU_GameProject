@@ -1,3 +1,4 @@
+using UnityEditor.Build.Player;
 using UnityEngine;
 
 public class EnemyBulletScript : MonoBehaviour
@@ -5,7 +6,7 @@ public class EnemyBulletScript : MonoBehaviour
     Transform character;
     private Rigidbody2D rb;
     public float speed = 5;
-
+    public float damage = 10f;
     //public float force;
     //private float timer;
     // Start is called before the first frame update
@@ -46,9 +47,11 @@ public class EnemyBulletScript : MonoBehaviour
     //}
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Character") || collision.gameObject.CompareTag("Wall"))
+        CharacterMovement playerHealth = collision.gameObject.GetComponent<CharacterMovement>();
+        if (playerHealth != null)
         {
-            Destroy(gameObject);
+            playerHealth.TakeDamage(damage);
         }
     }
+    
 }

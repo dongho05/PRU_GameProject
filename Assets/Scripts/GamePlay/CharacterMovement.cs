@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -12,10 +13,16 @@ public class CharacterMovement : MonoBehaviour
     Vector2 movement;
     Vector2 mousePos;
 
+    public Slider healthSlider;
+    public float startingHealth = 10f;
+    public float currentHealth;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = startingHealth;
+        UpdateHealthBar();
     }
 
     // Update is called once per frame
@@ -25,6 +32,8 @@ public class CharacterMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         mousePos =  cam.ScreenToWorldPoint(Input.mousePosition);
+
+
     }
 
      void FixedUpdate()
@@ -35,4 +44,17 @@ public class CharacterMovement : MonoBehaviour
         rb.rotation = angle;
 
     }
+
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        UpdateHealthBar();
+    }
+
+    void UpdateHealthBar()
+    {
+        healthSlider.value = currentHealth;
+    }
+
+
 }
