@@ -14,7 +14,7 @@ public class CharacterMovement : MonoBehaviour
     Vector2 mousePos;
 
     public Slider healthSlider;
-    public float startingHealth = 10f;
+    public float startingHealth;
     public float currentHealth;
 
 
@@ -33,6 +33,10 @@ public class CharacterMovement : MonoBehaviour
 
         mousePos =  cam.ScreenToWorldPoint(Input.mousePosition);
 
+        if(currentHealth > startingHealth)
+        {
+            currentHealth= startingHealth;
+        }
 
     }
 
@@ -59,5 +63,10 @@ public class CharacterMovement : MonoBehaviour
         healthSlider.value = currentHealth;
     }
 
+    public void Health(float amount)
+    {
+        currentHealth += amount;
+        UpdateHealthBar();
+    }
 
 }

@@ -7785,7 +7785,9 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420037}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7811,7 +7813,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.82102174, g: 0.83192414, b: 0.8490566, a: 0}
+  m_BackGroundColor: {r: 0.616545, g: 0.8018868, b: 0.7486572, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -7929,6 +7931,32 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e25a03dda6668b468f462872e45071a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &519420037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a76dbc1549ba2541a5ad4014c36fc52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabHealthItems: {fileID: 845097798939675654, guid: a614d01be32b8ed47b2be9c2c9d1c407, type: 3}
+  ExpItems: {fileID: 3642333236660657589, guid: 09c925fdc81b4db4d83e43ca8c247091, type: 3}
 --- !u!4 &519890731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3342542955270009076, guid: eb34f3559c0a40c4a920c6f9c0736608, type: 3}
