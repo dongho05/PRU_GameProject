@@ -9,6 +9,11 @@ TagManager:
   - Enemy
   - bullet
   - Wall
+  - Random
+  - Ak
+  - M4
+  - Pistol
+  - Sword
   layers:
   - Default
   - TransparentFX
