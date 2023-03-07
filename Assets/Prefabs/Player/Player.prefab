@@ -127,9 +127,9 @@ GameObject:
   - component: {fileID: 4834767121713519227}
   - component: {fileID: 4834767121713519220}
   - component: {fileID: 4834767121713519221}
+  - component: {fileID: 5621501329883402976}
   - component: {fileID: 2413776098239083566}
   - component: {fileID: -1938050841987419195}
-  - component: {fileID: 5621501329883402976}
   m_Layer: 0
   m_Name: Player
   m_TagString: Character
@@ -227,35 +227,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2413776098239083566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4834767121713519223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc267067f2f7a2499e44e2c6177f252, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 3
-  rb: {fileID: 4834767121713519220}
-  cam: {fileID: 0}
---- !u!114 &-1938050841987419195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4834767121713519223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f77a4f7899afb1f46b26fbd9240b6b97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 4834767120614092804}
-  bulletPrefab: {fileID: 3200121676172083947, guid: 88eb92e9150b28748aac34ee555b9f76, type: 3}
 --- !u!58 &5621501329883402976
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -272,6 +243,44 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2413776098239083566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834767121713519223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc267067f2f7a2499e44e2c6177f252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  joystickMovement: {fileID: 0}
+  rb: {fileID: 4834767121713519220}
+  cam: {fileID: 0}
+  healthSlider: {fileID: 0}
+  startingHealth: 0
+  currentHealth: 0
+  firePoint: {fileID: 0}
+  bulletPrefab: {fileID: 0}
+--- !u!114 &-1938050841987419195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834767121713519223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77a4f7899afb1f46b26fbd9240b6b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 4834767120614092804}
+  bulletPrefab: {fileID: 3200121676172083947, guid: 88eb92e9150b28748aac34ee555b9f76, type: 3}
+  bulletForce: 20
+  joystickFire: {fileID: 0}
+  rotationOffset: 0
 --- !u!1 &4834767121807742648
 GameObject:
   m_ObjectHideFlags: 0

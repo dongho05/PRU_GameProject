@@ -34,15 +34,24 @@ public class Bullet : MonoBehaviour
         var enemyAlpha = collision.collider.GetComponent<EnemyAlpha>();
         if (enemy){
             enemy.TakeHit(1);
-        }else if (enemyDelta)
+            Destroy(gameObject);
+        }
+        else if (enemyDelta)
         {
             enemyDelta.TakeHitDamageDelta(2);
-        }else if (enemyAlpha)
+            Destroy(gameObject);
+        }
+        else if (enemyAlpha)
         {
             enemyAlpha.TakeHitDamageAlpha(1);
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
         }
         
-        Destroy(gameObject);
 
         
     }
