@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static Cinemachine.AxisState;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -22,7 +19,7 @@ public class CharacterMovement : MonoBehaviour
     public float currentHealth;
 
     public Transform firePoint;
-    public GameObject bulletPrefab;
+    //public GameObject bulletPrefab;
 
 
 
@@ -85,6 +82,6 @@ public class CharacterMovement : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-        
+
     }
 }
