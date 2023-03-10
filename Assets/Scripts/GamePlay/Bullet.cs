@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 
@@ -21,7 +18,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, dir, speed * Time.deltaTime);
-        if(transform.position.x - firePoint.x > 30 || transform.position.y - firePoint.y > 30)
+        if (transform.position.x - firePoint.x > 30 || transform.position.y - firePoint.y > 30)
         {
             Destroy(gameObject);
         }
@@ -32,7 +29,8 @@ public class Bullet : MonoBehaviour
         var enemy = collision.collider.GetComponent<EnemyRangeActionScript>();
         var enemyDelta = collision.collider.GetComponent<EnemyDelta>();
         var enemyAlpha = collision.collider.GetComponent<EnemyAlpha>();
-        if (enemy){
+        if (enemy)
+        {
             enemy.TakeHit(1);
             Destroy(gameObject);
         }
@@ -51,8 +49,8 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
 
-        
+
+
     }
 }
