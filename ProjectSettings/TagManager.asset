@@ -17,6 +17,7 @@ TagManager:
   - Bullet3
   - Gun
   - PickUpItems
+  - Shotgun
   layers:
   - Default
   - TransparentFX

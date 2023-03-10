@@ -27,9 +27,9 @@ public class WeaponScript : MonoBehaviour
     {
 
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("M4"))
+        if (other.gameObject.CompareTag("Shotgun"))
         {
             if (currentWeaponIndex == 0)
             {
@@ -49,8 +49,9 @@ public class WeaponScript : MonoBehaviour
                 currentWeaponIndex -= 2;
                 guns[currentWeaponIndex].SetActive(true);
             }
+            Destroy(other.gameObject);
         }
-        if (collision.gameObject.CompareTag("Ak"))
+        if (other.gameObject.CompareTag("Ak"))
         {
             if (currentWeaponIndex != 0)
             {
@@ -58,9 +59,10 @@ public class WeaponScript : MonoBehaviour
                 currentWeaponIndex = 0;
                 guns[currentWeaponIndex].SetActive(true);
             }
+            Destroy(other.gameObject);
 
         }
-        if (collision.gameObject.CompareTag("Pistol"))
+        if (other.gameObject.CompareTag("Pistol"))
         {
             if (currentWeaponIndex == 0)
             {
@@ -80,8 +82,9 @@ public class WeaponScript : MonoBehaviour
                 currentWeaponIndex -= 1;
                 guns[currentWeaponIndex].SetActive(true);
             }
+            Destroy(other.gameObject);
         }
-        if (collision.gameObject.CompareTag("Sword"))
+        if (other.gameObject.CompareTag("Sword"))
         {
             if (currentWeaponIndex == 0)
             {
@@ -101,6 +104,7 @@ public class WeaponScript : MonoBehaviour
                 currentWeaponIndex += 1;
                 guns[currentWeaponIndex].SetActive(true);
             }
+            Destroy(other.gameObject);
         }
     }
 }
