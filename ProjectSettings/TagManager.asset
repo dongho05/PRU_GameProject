@@ -16,6 +16,7 @@ TagManager:
   - Sword
   - Bullet3
   - Gun
+  - PickUpItems
   layers:
   - Default
   - TransparentFX

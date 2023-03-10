@@ -6,10 +6,10 @@ public class LevelItems : MonoBehaviour
 {
     public float expValue;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
 
-        LevelUp playerExp = collision.gameObject.GetComponent<LevelUp>();
+        LevelUp playerExp = other.gameObject.GetComponent<LevelUp>();
         if (playerExp != null)
         {
             playerExp.SetExperience(expValue);

@@ -6,10 +6,10 @@ public class Healingth : MonoBehaviour
 {
     public float healAmount;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
 
-        CharacterMovement playerHealth = collision.gameObject.GetComponent<CharacterMovement>();
+        CharacterMovement playerHealth = other.gameObject.GetComponent<CharacterMovement>();
         if (playerHealth != null)
         {
             playerHealth.Health(healAmount);

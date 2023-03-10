@@ -79,4 +79,12 @@ public class CharacterMovement : MonoBehaviour
         UpdateHealthBar();
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PickUpItems"))
+        {
+            Destroy(other.gameObject);
+        }
+        
+    }
 }
