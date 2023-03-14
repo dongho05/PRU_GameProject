@@ -15,6 +15,7 @@ public class EnemyAlpha : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
+        Debug.Log("EnemyAlpha: " + currentHealth);
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class EnemyAlpha : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.value = currentHealth;
-
+        Debug.Log("EnemyAlpha: " + currentHealth);
         if (currentHealth <= 0)
         {
             Destroy(gameObject);

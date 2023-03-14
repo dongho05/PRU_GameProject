@@ -12,7 +12,7 @@ public class EnemyRangeActionScript : MonoBehaviour
     public GameObject bulletParent;
     private Transform character;
     
-    public int maxHealth = 10;
+    public int maxHealth = 15;
     private int currentHealth;
     public Slider healthBar;
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class EnemyRangeActionScript : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
-
+        Debug.Log("EnemyCircle: " + currentHealth);
     }
 
     // Update is called once per frame
@@ -51,7 +51,7 @@ public class EnemyRangeActionScript : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.value = currentHealth;
-
+        Debug.Log("EnemyCircle: " + currentHealth);
         if (currentHealth <= 0)
         {
             Destroy(gameObject);

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyDelta : MonoBehaviour
 {
-    public int maxHealth = 5;
+    public int maxHealth = 20;
     private int currentHealth;
     public Slider healthBar;
     public int damage = 10;
@@ -17,14 +17,15 @@ public class EnemyDelta : MonoBehaviour
         currentHealth = maxHealth;
         healthBar.maxValue = maxHealth;
         healthBar.value = currentHealth;
+        Debug.Log("EnemyDelta: " + currentHealth);
     }
 
     // Update is called once per frame
-    public void TakeHitDamageDelta(int damage)
+    public void TakeHitDamageDelta(int damagePlayer)
     {
-        currentHealth -= damage;
+        currentHealth -= damagePlayer;
         healthBar.value = currentHealth;
-
+        Debug.Log("EnemyDelta: " + currentHealth);
         if (currentHealth <= 0)
         {
             Destroy(gameObject);

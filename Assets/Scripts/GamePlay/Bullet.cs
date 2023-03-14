@@ -25,11 +25,11 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        var enemy = collision.collider.GetComponent<EnemyRangeActionScript>();
-        var enemyDelta = collision.collider.GetComponent<EnemyDelta>();
-        var enemyAlpha = collision.collider.GetComponent<EnemyAlpha>();
+        var enemy = other.GetComponent<EnemyRangeActionScript>();
+        var enemyDelta = other.GetComponent<EnemyDelta>();
+        var enemyAlpha = other.GetComponent<EnemyAlpha>();
         if (enemy)
         {
             enemy.TakeHit(dame);
@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }
