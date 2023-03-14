@@ -15,7 +15,7 @@ public class CharacterMovement : MonoBehaviour
 
 
     public Slider healthSlider;
-    public int startingHealth = 100;
+    public int startingHealth = 40;
     public int currentHealth;
 
     public Transform firePoint;
@@ -75,9 +75,9 @@ public class CharacterMovement : MonoBehaviour
 
     public void Health(int amount)
     {
-        if (currentHealth + amount > 100)
+        if (currentHealth + amount > 40)
         {
-            currentHealth = 100;
+            currentHealth = 40;
         }
         else
         {

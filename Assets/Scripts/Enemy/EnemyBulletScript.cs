@@ -1,12 +1,11 @@
-using UnityEditor.Build.Player;
 using UnityEngine;
 
 public class EnemyBulletScript : MonoBehaviour
 {
     Transform character;
     private Rigidbody2D rb;
-    public float speed = 5;
-    public int damage = 10;
+    public float speed = 2;
+    public int damage = 1;
     //public float force;
     //private float timer;
     // Start is called before the first frame update
@@ -41,10 +40,10 @@ public class EnemyBulletScript : MonoBehaviour
         rb.velocity = new Vector2(move.x, move.y);
         Destroy(this.gameObject, 2);
     }
-    //void Update()
-    //{
-    //    transform.position = Vector2.MoveTowards(transform.position, character.position, speed * Time.deltaTime);
-    //}
+    void Update()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, character.position, speed * Time.deltaTime);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         CharacterMovement playerHealth = collision.gameObject.GetComponent<CharacterMovement>();
@@ -58,5 +57,5 @@ public class EnemyBulletScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
 }

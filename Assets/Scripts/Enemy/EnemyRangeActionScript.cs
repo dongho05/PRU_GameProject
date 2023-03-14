@@ -11,8 +11,8 @@ public class EnemyRangeActionScript : MonoBehaviour
     public GameObject bullet;
     public GameObject bulletParent;
     private Transform character;
-    
-    public int maxHealth = 15;
+
+    public int maxHealth = 4;
     private int currentHealth;
     public Slider healthBar;
     // Start is called before the first frame update

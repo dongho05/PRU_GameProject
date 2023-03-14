@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9820bd4295a78264cabdf27c824ecb48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  target: {fileID: 1524194844614667045, guid: bb434c863bcb10c4f86d8f1ad2a5fe48, type: 3}
+  speed: 1
+  target: {fileID: 7552814245280094385, guid: c2a5deedc5a29484a8b21f3e83372202, type: 3}
 --- !u!68 &3910110451248036395
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -293,8 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed879c52182ee342a728f2a5bcb0be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabCircle: {fileID: 1524194844614667033, guid: bb434c863bcb10c4f86d8f1ad2a5fe48, type: 3}
-  speed: 10
+  prefabCircle: {fileID: 2755431175333319563}
+  speed: 1
 --- !u!114 &7768205700456717273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,9 +307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2518981714b31cc468af2a0c73302647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 8
   healthBar: {fileID: 3006290325879065428}
-  damage: 10
+  damage: 1
 --- !u!1 &7056902410647343709
 GameObject:
   m_ObjectHideFlags: 0

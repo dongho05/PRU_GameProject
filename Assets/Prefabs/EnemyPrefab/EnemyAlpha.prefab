@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  target: {fileID: 4834767121713519227, guid: 9912df9d910e12b449a8163eb1427ce2, type: 3}
+  target: {fileID: 7552814245280094385, guid: c2a5deedc5a29484a8b21f3e83372202, type: 3}
 --- !u!50 &5241987081141122685
 Rigidbody2D:
   serializedVersion: 4
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabCircle: {fileID: 5541791155655310782}
-  speed: 10
+  speed: 2
 --- !u!114 &1915411773198332968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   healthBar: {fileID: 3227405864687925006}
+  damage: 1
 --- !u!1 &6934530221764985589
 GameObject:
   m_ObjectHideFlags: 0

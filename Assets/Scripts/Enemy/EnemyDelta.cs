@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class EnemyDelta : MonoBehaviour
 {
-    public int maxHealth = 20;
+    public int maxHealth = 8;
     private int currentHealth;
     public Slider healthBar;
-    public int damage = 10;
+    public int damage = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +35,7 @@ public class EnemyDelta : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);
-            Destroy(gameObject);
+            //Destroy(gameObject);
             //Debug.Log("-10 vàng");
         }
 

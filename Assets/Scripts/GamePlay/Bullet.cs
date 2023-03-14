@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
     private float speed = 9f;
     private Vector3 dir;
     private Vector3 firePoint;
-    private int dame = 5;
+    private int dame = 1;
 
     void Start()
     {
@@ -32,6 +32,7 @@ public class Bullet : MonoBehaviour
         var enemyAlpha = other.GetComponent<EnemyAlpha>();
         if (enemy)
         {
+
             enemy.TakeHit(dame);
             Destroy(gameObject);
         }
