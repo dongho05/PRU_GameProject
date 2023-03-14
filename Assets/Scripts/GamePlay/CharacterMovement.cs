@@ -15,8 +15,8 @@ public class CharacterMovement : MonoBehaviour
 
 
     public Slider healthSlider;
-    public float startingHealth;
-    public float currentHealth;
+    public int startingHealth = 100;
+    public int currentHealth;
 
     public Transform firePoint;
     //public GameObject bulletPrefab;
@@ -30,6 +30,8 @@ public class CharacterMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = startingHealth;
+        healthSlider.maxValue = startingHealth;
+        healthSlider.value = currentHealth;
         UpdateHealthBar();
     }
 
@@ -55,7 +57,7 @@ public class CharacterMovement : MonoBehaviour
     }
 
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         UpdateHealthBar();
@@ -68,11 +70,19 @@ public class CharacterMovement : MonoBehaviour
     void UpdateHealthBar()
     {
         healthSlider.value = currentHealth;
+        Debug.Log("Player: " + currentHealth);
     }
 
-    public void Health(float amount)
+    public void Health(int amount)
     {
-        currentHealth += amount;
+        if (currentHealth + amount > 100)
+        {
+            currentHealth = 100;
+        }
+        else
+        {
+            currentHealth += amount;
+        }
         UpdateHealthBar();
     }
 

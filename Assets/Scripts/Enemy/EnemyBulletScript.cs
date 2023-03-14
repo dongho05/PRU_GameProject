@@ -6,7 +6,7 @@ public class EnemyBulletScript : MonoBehaviour
     Transform character;
     private Rigidbody2D rb;
     public float speed = 5;
-    public float damage = 10f;
+    public int damage = 10;
     //public float force;
     //private float timer;
     // Start is called before the first frame update
@@ -51,6 +51,10 @@ public class EnemyBulletScript : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
             Destroy(gameObject);
         }
     }

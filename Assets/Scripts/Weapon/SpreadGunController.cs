@@ -10,7 +10,7 @@ public class SpreadGunController : MonoBehaviour
 
     //public float shotSpeed;
     //public float shotCounter, fireRate;
-    public float bulletForce = 20f;
+    public float bulletForce = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,19 +37,23 @@ public class SpreadGunController : MonoBehaviour
                 transform.rotation = q;
             }
         }
+
+       
     }
     private void Shoot()
     {
-        foreach (var firePoint in firePoints)
+        for (int i = 0; i <= 2; i++)
         {
             //GameObject shot = Instantiate(ammoType, firePoint.position, firePoint.rotation);
             //Rigidbody2D rb = shot.GetComponent<Rigidbody2D>();
             //rb.AddForce(firePoint.up * shotSpeed, ForceMode2D.Impulse);
             //Destroy(shot.gameObject, 1f);
-            GameObject bullet = Instantiate(ammoType, firePoint.position, firePoint.rotation);
+            GameObject bullet = Instantiate(ammoType, firePoints[i].position, firePoints[i].rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            rb.AddForce(firePoints[i].up * bulletForce, ForceMode2D.Impulse);
         }
+
+
 
     }
 }

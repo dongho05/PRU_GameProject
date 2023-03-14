@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class EnemyDelta : MonoBehaviour
 {
-    public int maxHealth = 2;
+    public int maxHealth = 5;
     private int currentHealth;
     public Slider healthBar;
+    public int damage = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +29,17 @@ public class EnemyDelta : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        CharacterMovement playerHealth = collision.gameObject.GetComponent<CharacterMovement>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
+            Destroy(gameObject);
+            //Debug.Log("-10 vàng");
+        }
+
     }
 }

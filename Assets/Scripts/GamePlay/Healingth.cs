@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Healingth : MonoBehaviour
 {
-    public float healAmount;
+    public int healAmount;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
