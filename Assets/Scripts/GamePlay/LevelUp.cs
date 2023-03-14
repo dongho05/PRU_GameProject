@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class LevelUp : MonoBehaviour
 {
-    public int level = 1;
+    public int level;
+    public int maxLevel = 15;
     public float experience
     {
         get; private set;
@@ -23,7 +24,7 @@ public class LevelUp : MonoBehaviour
         {
             return 0;
         }
-        Debug.Log((currentLevel * currentLevel + currentLevel) * 5);
+        
         return (currentLevel * currentLevel+currentLevel)*5;
        
     } 
@@ -50,7 +51,11 @@ public class LevelUp : MonoBehaviour
 
     private void LevelUpPlayer()
     {
-        level++;
-        lvlText.text = "Level: "+ level.ToString("");
+        if (level < maxLevel)
+        {
+            level++;
+            lvlText.text = "Level: " + level.ToString("");
+            GetComponent<CharacterMovement>().IncreaseHealth(level);
+        }
     }
 }

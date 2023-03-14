@@ -66,12 +66,22 @@ public class CharacterMovement : MonoBehaviour
             Destroy(gameObject);
         }
     }
+   
 
+    public void IncreaseHealth(int level)
+    {
+        
+        startingHealth = currentHealth + (level * 10);
+        currentHealth = startingHealth;
+        UpdateHealthBar();
+        Debug.Log(currentHealth);
+    }
     void UpdateHealthBar()
     {
         healthSlider.value = currentHealth;
         Debug.Log("Player: " + currentHealth);
     }
+
 
     public void Health(int amount)
     {
@@ -86,6 +96,8 @@ public class CharacterMovement : MonoBehaviour
         UpdateHealthBar();
     }
 
+   
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("PickUpItems"))
@@ -94,4 +106,6 @@ public class CharacterMovement : MonoBehaviour
         }
 
     }
+
+    
 }
