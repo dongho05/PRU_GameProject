@@ -51,6 +51,6 @@ public class LevelUp : MonoBehaviour
     private void LevelUpPlayer()
     {
         level++;
-        lvlText.text = level.ToString("");
+        lvlText.text = "Level: "+ level.ToString("");
     }
 }
