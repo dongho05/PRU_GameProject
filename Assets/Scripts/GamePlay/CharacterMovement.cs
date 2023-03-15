@@ -76,6 +76,12 @@ public class CharacterMovement : MonoBehaviour
         UpdateHealthBar();
         Debug.Log(currentHealth);
     }
+
+    public void IncreaseSpeed(int level)
+    {
+        moveSpeed = moveSpeed+1;
+        Debug.Log(moveSpeed);
+    }
     void UpdateHealthBar()
     {
         healthSlider.value = currentHealth;

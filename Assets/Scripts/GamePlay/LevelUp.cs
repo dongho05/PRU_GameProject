@@ -56,6 +56,7 @@ public class LevelUp : MonoBehaviour
             level++;
             lvlText.text = "Level: " + level.ToString("");
             GetComponent<CharacterMovement>().IncreaseHealth(level);
+            GetComponent<CharacterMovement>().IncreaseSpeed(level);
         }
     }
 }
