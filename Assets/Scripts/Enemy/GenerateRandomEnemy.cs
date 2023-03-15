@@ -18,7 +18,7 @@ public class GenerateRandomEnemy : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         timer = gameObject.AddComponent<Timer>();
         timer.Duration = 2;
         timer.Run();
@@ -53,7 +53,7 @@ public class GenerateRandomEnemy : MonoBehaviour
             int prefabIndex = Random.Range(0, circles.Count);
             //circles.Add(Instantiate<GameObject>(circles.ElementAt<GameObject>(prefabIndex), new Vector3(Random.Range(screenLeft, screenRight), Random.Range(screenBottom, screenTop), screenZ), Quaternion.identity));
             Instantiate<GameObject>(circles.ElementAt<GameObject>(prefabIndex), new Vector3(Random.Range(-20, 20), Random.Range(-10.5f, 10.5f), screenZ), Quaternion.identity);
-            timer.Duration = 2;
+            timer.Duration = 7;
             timer.Run();
         }
 

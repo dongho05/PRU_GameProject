@@ -18,6 +18,8 @@ TagManager:
   - Gun
   - PickUpItems
   - Shotgun
+  - HUD
+  - EnemyBoss
   layers:
   - Default
   - TransparentFX

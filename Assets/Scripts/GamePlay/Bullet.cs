@@ -30,9 +30,11 @@ public class Bullet : MonoBehaviour
         var enemy = other.GetComponent<EnemyRangeActionScript>();
         var enemyDelta = other.GetComponent<EnemyDelta>();
         var enemyAlpha = other.GetComponent<EnemyAlpha>();
+        var enemyBoss = other.GetComponent<EnemyBoss>();
+        
         if (enemy)
         {
-
+               
             enemy.TakeHit(dame);
             Destroy(gameObject);
         }
@@ -47,11 +49,17 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
+        else if(enemyBoss)
+        {
+            enemyBoss.TakeHitDamageAlpha(dame);
+            Destroy(gameObject);
+        }
+
         if (other.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }
-
+        
 
 
     }

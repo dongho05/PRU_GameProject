@@ -15,7 +15,7 @@ public class CharacterMovement : MonoBehaviour
 
 
     public Slider healthSlider;
-    public int startingHealth = 40;
+    public int startingHealth;
     public int currentHealth;
 
     public Transform firePoint;
@@ -80,7 +80,6 @@ public class CharacterMovement : MonoBehaviour
     public void IncreaseSpeed(int level)
     {
         moveSpeed = moveSpeed+1;
-        Debug.Log(moveSpeed);
     }
     void UpdateHealthBar()
     {
@@ -91,13 +90,27 @@ public class CharacterMovement : MonoBehaviour
 
     public void Health(int amount)
     {
-        if (currentHealth + amount > 40)
+        //if (currentHealth + amount > 50)
+        //{
+        //    currentHealth = 50;
+        //}
+        //else
+        //{
+        //    currentHealth += amount;
+        //}
+        //UpdateHealthBar();
+        int newHealth = currentHealth + amount;
+        if (newHealth > startingHealth)
         {
-            currentHealth = 40;
+            currentHealth = startingHealth;
+        }
+        else if (newHealth < 0)
+        {
+            currentHealth = 0;
         }
         else
         {
-            currentHealth += amount;
+            currentHealth = newHealth;
         }
         UpdateHealthBar();
     }
