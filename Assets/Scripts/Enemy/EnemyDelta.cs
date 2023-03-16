@@ -7,6 +7,7 @@ public class EnemyDelta : MonoBehaviour
     private int currentHealth;
     public Slider healthBar;
     public int damage = 1;
+    int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,9 @@ public class EnemyDelta : MonoBehaviour
         Debug.Log("EnemyDelta: " + currentHealth);
         if (currentHealth <= 0)
         {
+            score += 3;
+            HUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+            hud.AddPoints(score);
             Destroy(gameObject);
         }
     }

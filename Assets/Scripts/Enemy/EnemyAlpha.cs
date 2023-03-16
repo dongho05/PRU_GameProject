@@ -7,6 +7,7 @@ public class EnemyAlpha : MonoBehaviour
     private int currentHealth;
     public Slider healthBar;
     public int damage = 1;
+    int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,11 @@ public class EnemyAlpha : MonoBehaviour
         Debug.Log("EnemyAlpha: " + currentHealth);
         if (currentHealth <= 0)
         {
+            score += 3;
+            HUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+            hud.AddPoints(score);
             Destroy(gameObject);
+
         }
     }
 

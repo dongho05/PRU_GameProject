@@ -15,6 +15,7 @@ public class EnemyRangeActionScript : MonoBehaviour
     public int maxHealth = 4;
     private int currentHealth;
     public Slider healthBar;
+    int score = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +55,9 @@ public class EnemyRangeActionScript : MonoBehaviour
         Debug.Log("EnemyCircle: " + currentHealth);
         if (currentHealth <= 0)
         {
+            score += 3;
+            HUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+            hud.AddPoints(score);
             Destroy(gameObject);
         }
     }
