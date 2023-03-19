@@ -1519,7 +1519,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124765677
 MonoBehaviour:
@@ -3860,8 +3860,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -147, y: 140}
-  m_SizeDelta: {x: 748, y: 361}
+  m_AnchoredPosition: {x: -300, y: 250}
+  m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306209629
 MonoBehaviour:
@@ -3918,7 +3918,7 @@ MonoBehaviour:
   joystickVec: {x: 0, y: 0}
   joystickTouchPos: {x: 0, y: 0}
   joystickOriginalPos: {x: 0, y: 0}
-  joystickRadius: 0
+  joystickRadius: 90
 --- !u!114 &306209632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5217,8 +5217,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 147, y: 140}
-  m_SizeDelta: {x: 748, y: 361}
+  m_AnchoredPosition: {x: 300, y: 250}
+  m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &379796882
 MonoBehaviour:
@@ -5237,7 +5237,7 @@ MonoBehaviour:
   joystickVec: {x: 0, y: 0}
   joystickTouchPos: {x: 0, y: 0}
   joystickOriginalPos: {x: 0, y: 0}
-  joystickRadius: 0
+  joystickRadius: 90
 --- !u!114 &379796883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6579,7 +6579,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 120}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468387721
 MonoBehaviour:
@@ -12785,7 +12785,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -599.01, y: 493.6}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1071941832
 MonoBehaviour:
@@ -12809,11 +12809,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 187
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -23623,7 +23623,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864035591
 MonoBehaviour:
@@ -23760,7 +23760,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 115.99, y: 498.5}
-  m_SizeDelta: {x: 200, y: 10}
+  m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887187366
 MonoBehaviour:
@@ -25863,7 +25863,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 120}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2065822869
 MonoBehaviour:
@@ -26161,7 +26161,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -588, y: 499.3}
-  m_SizeDelta: {x: 203.96997, y: 20}
+  m_SizeDelta: {x: 203.96997, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072319454
 MonoBehaviour:

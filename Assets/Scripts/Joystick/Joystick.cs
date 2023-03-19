@@ -9,12 +9,12 @@ public class Joystick : MonoBehaviour
     public Vector2 joystickVec;
     public Vector2 joystickTouchPos;
     public Vector2 joystickOriginalPos;
-    public float joystickRadius;
+    public float joystickRadius = 90f;
 
     void Start()
     {
         joystickOriginalPos = joystickBG.transform.position;
-        joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 4;
+        joystickRadius = 90f;
 
     }
 
