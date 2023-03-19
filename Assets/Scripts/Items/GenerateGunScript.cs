@@ -1,14 +1,15 @@
-
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class GenerateItems : MonoBehaviour
+public class GenerateGunScript : MonoBehaviour
 {
     [SerializeField]
-    GameObject prefabHealthItems;
+    GameObject prefabAK;
     [SerializeField]
-    GameObject ExpItems;
+    GameObject prefabShotgun;
+    [SerializeField]
+    GameObject prefabPistol;
     Timer timer;
 
     List<GameObject> items = new List<GameObject>();
@@ -17,10 +18,11 @@ public class GenerateItems : MonoBehaviour
     void Start()
     {
         timer = gameObject.AddComponent<Timer>();
-        timer.Duration = 2;
+        timer.Duration = 50;
         timer.Run();
-        items.Add(prefabHealthItems);
-        items.Add(ExpItems);
+        items.Add(prefabAK);
+        items.Add(prefabShotgun);
+        items.Add(prefabPistol);
 
     }
 
@@ -51,7 +53,7 @@ public class GenerateItems : MonoBehaviour
             //items.Add(Instantiate<GameObject>(items.ElementAt<GameObject>(prefabIndex), new Vector3(Random.Range(screenLeft, screenRight), Random.Range(screenBottom, screenTop), screenZ), Quaternion.identity));
             Instantiate<GameObject>(items.ElementAt<GameObject>(prefabIndex), new Vector3(Random.Range(-20, 20), Random.Range(-10.5f, 10.5f), screenZ), Quaternion.identity);
 
-            timer.Duration = 2;
+            timer.Duration = 50;
             timer.Run();
         }
 

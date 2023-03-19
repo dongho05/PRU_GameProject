@@ -3850,7 +3850,7 @@ RectTransform:
   m_GameObject: {fileID: 306209627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2065822868}
@@ -3860,7 +3860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -80, y: 80}
+  m_AnchoredPosition: {x: -147, y: 140}
   m_SizeDelta: {x: 748, y: 361}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306209629
@@ -5207,7 +5207,7 @@ RectTransform:
   m_GameObject: {fileID: 379796880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1864035590}
@@ -5217,7 +5217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 80, y: 80}
+  m_AnchoredPosition: {x: 147, y: 140}
   m_SizeDelta: {x: 748, y: 361}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &379796882
@@ -7274,6 +7274,7 @@ GameObject:
   - component: {fileID: 519420035}
   - component: {fileID: 519420036}
   - component: {fileID: 519420038}
+  - component: {fileID: 519420039}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7448,6 +7449,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabCircle: {fileID: 7284742513291638769, guid: 44cce2d9624906340a5de5a431fee37e, type: 3}
+--- !u!114 &519420039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adcb513ddadda554a876351025bb9661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabAK: {fileID: 3621676096428846901, guid: 7d90057e206bf6342b199f32007cea5f, type: 3}
+  prefabShotgun: {fileID: 1811078338933613037, guid: 0542950e00207fb42b8183b7368dd150, type: 3}
+  prefabPistol: {fileID: 2391576964304930414, guid: eb98cc8d1de770d439b8c11a44808c00, type: 3}
 --- !u!1 &522079384
 GameObject:
   m_ObjectHideFlags: 0
@@ -12768,7 +12784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -599.01, y: 154.76}
+  m_AnchoredPosition: {x: -599.01, y: 493.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1071941832
@@ -13079,7 +13095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -213.9, y: 227.8}
+  m_AnchoredPosition: {x: -356.91, y: 494.59}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1112044544
@@ -13111,8 +13127,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13129,8 +13145,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -23743,7 +23759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 115.99, y: 179.76}
+  m_AnchoredPosition: {x: 115.99, y: 498.5}
   m_SizeDelta: {x: 200, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1887187366
@@ -26144,7 +26160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -588, y: 180}
+  m_AnchoredPosition: {x: -588, y: 499.3}
   m_SizeDelta: {x: 203.96997, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072319454
@@ -26915,6 +26931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 2391576964304930414, guid: eb98cc8d1de770d439b8c11a44808c00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb98cc8d1de770d439b8c11a44808c00, type: 3}
 --- !u!1001 &3621676097142924693
@@ -26927,6 +26947,10 @@ PrefabInstance:
     - target: {fileID: 3621676096428846901, guid: 7d90057e206bf6342b199f32007cea5f, type: 3}
       propertyPath: m_Name
       value: AK
+      objectReference: {fileID: 0}
+    - target: {fileID: 3621676096428846901, guid: 7d90057e206bf6342b199f32007cea5f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3621676096428846903, guid: 7d90057e206bf6342b199f32007cea5f, type: 3}
       propertyPath: m_RootOrder
@@ -27077,6 +27101,10 @@ PrefabInstance:
     - target: {fileID: 1811078338933613037, guid: 0542950e00207fb42b8183b7368dd150, type: 3}
       propertyPath: m_Name
       value: Shotgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1811078338933613037, guid: 0542950e00207fb42b8183b7368dd150, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4932164640156149846, guid: 0542950e00207fb42b8183b7368dd150, type: 3}
       propertyPath: m_RootOrder

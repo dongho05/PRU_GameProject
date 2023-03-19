@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-  
+
     void Start()
     {
         // pause the game when added to the scene

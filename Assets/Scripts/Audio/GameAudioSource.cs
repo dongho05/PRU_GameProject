@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 /// <summary>
@@ -7,11 +6,11 @@ using UnityEngine;
 /// </summary>
 public class GameAudioSource : MonoBehaviour
 {
-	/// <summary>
-	/// Awake is called before Start
-	/// </summary>
-	void Awake()
-	{
+    /// <summary>
+    /// Awake is called before Start
+    /// </summary>
+    void Awake()
+    {
         // make sure we only have one of this game object
         // in the game
         if (!AudioManager.Initialized)
@@ -26,6 +25,6 @@ public class GameAudioSource : MonoBehaviour
             // duplicate game object, so destroy
             Destroy(gameObject);
         }
-        
+
     }
 }

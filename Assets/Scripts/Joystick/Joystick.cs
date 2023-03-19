@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -14,7 +13,7 @@ public class Joystick : MonoBehaviour
 
     void Start()
     {
-        joystickOriginalPos  = joystickBG.transform.position;
+        joystickOriginalPos = joystickBG.transform.position;
         joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 4;
 
     }
@@ -35,7 +34,7 @@ public class Joystick : MonoBehaviour
 
         float joystickDist = Vector2.Distance(dragPos, joystickTouchPos);
 
-        if(joystickDist < joystickRadius)
+        if (joystickDist < joystickRadius)
         {
             joystick.transform.position = joystickTouchPos + joystickVec * joystickDist;
         }
@@ -56,6 +55,6 @@ public class Joystick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,8 +20,8 @@ public class HealthBehavior : MonoBehaviour
 
     public void Update()
     {
-        slider.transform.position= Camera.main.WorldToScreenPoint(transform.parent.position + offset);
+        slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + offset);
     }
 
-    
+
 }

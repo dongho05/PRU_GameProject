@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SceneManagement;
+
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
@@ -39,13 +36,13 @@ public class MainMenu : MonoBehaviour
 
     public void HandleVolumeButtonOnClickEvent()
     {
-        if(AudioListener.volume == 0)
+        if (AudioListener.volume == 0)
         {
             AudioListener.volume = 1f;
             volBtn.image.color = Color.white;
             Debug.Log("On");
         }
-        else if(AudioListener.volume == 1f)
+        else if (AudioListener.volume == 1f)
         {
             AudioListener.volume = 0;
             volBtn.image.color = Color.gray;

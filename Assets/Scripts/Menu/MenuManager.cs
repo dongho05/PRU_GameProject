@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,11 +7,11 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public static class MenuManager
 {
-	/// <summary>
-	/// Goes to the menu with the given name
-	/// </summary>
-	/// <param name="name">name of the menu to go to</param>
-	public static void GoToMenu(MenuName name)
+    /// <summary>
+    /// Goes to the menu with the given name
+    /// </summary>
+    /// <param name="name">name of the menu to go to</param>
+    public static void GoToMenu(MenuName name)
     {
         switch (name)
         {
@@ -45,6 +44,6 @@ public static class MenuManager
                 SceneManager.LoadScene("SampleScene");
                 break;
         }
-        
-	}
+
+    }
 }

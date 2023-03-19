@@ -55,7 +55,7 @@ public class EnemyRangeActionScript : MonoBehaviour
         Debug.Log("EnemyCircle: " + currentHealth);
         if (currentHealth <= 0)
         {
-            score += 3;
+            score += 5;
             HUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
             hud.AddPoints(score);
             Destroy(gameObject);

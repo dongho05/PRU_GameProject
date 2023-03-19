@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,7 +28,7 @@ public static class AudioManager
     {
         initialized = true;
         audioSource = source;
-       
+
         audioClips.Add(AudioClipName.ButtonClick,
              Resources.Load<AudioClip>("ButtonClick"));
         audioClips.Add(AudioClipName.ExitClick,

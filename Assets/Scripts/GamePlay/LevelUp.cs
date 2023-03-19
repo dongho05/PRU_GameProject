@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,22 +16,22 @@ public class LevelUp : MonoBehaviour
     // Start is called before the first frame update
     public static int ExpNeedTolvUp(int currentLevel)
     {
-        
+
         if (currentLevel == 0)
         {
             return 0;
         }
-        
-        return (currentLevel * currentLevel+currentLevel)*5;
-       
-    } 
-     public void SetExperience(float exp)
+
+        return (currentLevel * currentLevel + currentLevel) * 5;
+
+    }
+    public void SetExperience(float exp)
     {
         experience += exp;
         float expNeeded = ExpNeedTolvUp(level);
-        float previous = ExpNeedTolvUp(level-1);
+        float previous = ExpNeedTolvUp(level - 1);
 
-        if(experience >= expNeeded)
+        if (experience >= expNeeded)
         {
             LevelUpPlayer();
             expNeeded = ExpNeedTolvUp(level);
@@ -43,7 +40,7 @@ public class LevelUp : MonoBehaviour
 
         expBar.fillAmount = (experience - previous) / (expNeeded - previous);
 
-        if(expBar.fillAmount == 1)
+        if (expBar.fillAmount == 1)
         {
             expBar.fillAmount = 0;
         }
