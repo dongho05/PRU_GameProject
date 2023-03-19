@@ -12,6 +12,9 @@ public class SpreadGunController : MonoBehaviour
     //public float shotCounter, fireRate;
     public float bulletForce = 10f;
     // Start is called before the first frame update
+
+    float shootDelay = 0.5f;
+    float shootTimer = 0f;
     void Start()
     {
 
@@ -20,10 +23,9 @@ public class SpreadGunController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonUp("Fire1"))
-        {
-            Shoot();
-        }
+        
+         
+        
     }
     void FixedUpdate()
     {
@@ -37,13 +39,19 @@ public class SpreadGunController : MonoBehaviour
                 transform.rotation = q;
             }
         }
+        Shoot();
 
-       
     }
     private void Shoot()
     {
         for (int i = 0; i <= 2; i++)
         {
+            shootTimer += Time.fixedDeltaTime;
+            if (shootTimer < shootDelay)
+            {
+                return;
+            }
+            shootTimer = 0;
             //GameObject shot = Instantiate(ammoType, firePoint.position, firePoint.rotation);
             //Rigidbody2D rb = shot.GetComponent<Rigidbody2D>();
             //rb.AddForce(firePoint.up * shotSpeed, ForceMode2D.Impulse);
@@ -51,6 +59,7 @@ public class SpreadGunController : MonoBehaviour
             GameObject bullet = Instantiate(ammoType, firePoints[i].position, firePoints[i].rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoints[i].up * bulletForce, ForceMode2D.Impulse);
+            AudioManager.Play(AudioClipName.GunSound);
         }
 
 

@@ -14,15 +14,13 @@ public class Shooting : MonoBehaviour
     public int rotationOffset;
 
 
+    float shootDelay = 0.5f;
+    float shootTimer = 0f;
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonUp("Fire1"))
-        {
-            Shoot();
-            AudioManager.Play(AudioClipName.GunSound);
-
-        }
+        
 
     }
     void FixedUpdate()
@@ -37,12 +35,21 @@ public class Shooting : MonoBehaviour
                 transform.rotation = q;
             }
         }
+
+        Shoot();
     }
     private void Shoot()
     {
+        shootTimer += Time.fixedDeltaTime;
+        if(shootTimer < shootDelay)
+        {
+            return;
+        }
+        shootTimer = 0;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        AudioManager.Play(AudioClipName.GunSound);
 
     }
 }
