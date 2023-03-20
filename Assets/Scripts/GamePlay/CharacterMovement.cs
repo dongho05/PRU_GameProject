@@ -1,8 +1,7 @@
-using System.IO;
 using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -25,8 +24,6 @@ public class CharacterMovement : MonoBehaviour
     //public GameObject bulletPrefab;
 
     HUD hud;
-
-
 
 
 
@@ -57,7 +54,7 @@ public class CharacterMovement : MonoBehaviour
         {
             currentHealth = startingHealth;
         }
-   
+
 
 
         //Move 
@@ -74,9 +71,9 @@ public class CharacterMovement : MonoBehaviour
             Destroy(gameObject);
             string text = File.ReadAllText(Application.dataPath + "/Scripts/Menu/High-Score.txt");
             int point = int.Parse(text);
-            
+
             //Debug.Log("File"+point+"   current: "+hud.GetPoints());
-            if(point < hud.GetPoints())
+            if (point < hud.GetPoints())
             {
                 Debug.Log("File" + point + "   current: " + hud.GetPoints());
                 StreamWriter output = null;
@@ -98,15 +95,17 @@ public class CharacterMovement : MonoBehaviour
                         output.Close();
                     }
                 }
+
             }
-            
+
+            MenuManager.GoToMenu(MenuName.Main);
         }
     }
-   
+
 
     public void IncreaseHealth(int level)
     {
-        
+
         startingHealth = currentHealth + (level * 10);
         currentHealth = startingHealth;
         UpdateHealthBar();
@@ -115,7 +114,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void IncreaseSpeed(int level)
     {
-        moveSpeed = moveSpeed+1;
+        moveSpeed = moveSpeed + 1;
     }
     void UpdateHealthBar()
     {
@@ -151,7 +150,7 @@ public class CharacterMovement : MonoBehaviour
         UpdateHealthBar();
     }
 
-   
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -162,5 +161,5 @@ public class CharacterMovement : MonoBehaviour
 
     }
 
-    
+
 }
