@@ -44,15 +44,15 @@ public class EnemyBulletScript : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, character.position, speed * Time.deltaTime);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        CharacterMovement playerHealth = collision.gameObject.GetComponent<CharacterMovement>();
+        CharacterMovement playerHealth = other.gameObject.GetComponent<CharacterMovement>();
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);
             Destroy(gameObject);
         }
-        if (collision.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }

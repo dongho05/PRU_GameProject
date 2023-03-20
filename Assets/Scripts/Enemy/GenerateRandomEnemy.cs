@@ -19,7 +19,7 @@ public class GenerateRandomEnemy : MonoBehaviour
     void Start()
     {
         timer = gameObject.AddComponent<Timer>();
-        timer.Duration = 2;
+        timer.Duration = 5;
         timer.Run();
         circles.Add(prefabEnemyAlpha);
         circles.Add(prefabCircle);
@@ -52,7 +52,7 @@ public class GenerateRandomEnemy : MonoBehaviour
             int prefabIndex = Random.Range(0, circles.Count);
             //circles.Add(Instantiate<GameObject>(circles.ElementAt<GameObject>(prefabIndex), new Vector3(Random.Range(screenLeft, screenRight), Random.Range(screenBottom, screenTop), screenZ), Quaternion.identity));
             Instantiate<GameObject>(circles.ElementAt<GameObject>(prefabIndex), new Vector3(Random.Range(-20, 20), Random.Range(-10.5f, 10.5f), screenZ), Quaternion.identity);
-            timer.Duration = 7;
+            timer.Duration = 5;
             timer.Run();
         }
 
