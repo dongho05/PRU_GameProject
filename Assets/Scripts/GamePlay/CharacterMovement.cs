@@ -1,5 +1,8 @@
+using System.IO;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -21,6 +24,8 @@ public class CharacterMovement : MonoBehaviour
     public Transform firePoint;
     //public GameObject bulletPrefab;
 
+    HUD hud;
+
 
 
 
@@ -32,6 +37,7 @@ public class CharacterMovement : MonoBehaviour
         currentHealth = startingHealth;
         healthSlider.maxValue = startingHealth;
         healthSlider.value = currentHealth;
+        hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
         UpdateHealthBar();
     }
 
@@ -51,6 +57,8 @@ public class CharacterMovement : MonoBehaviour
         {
             currentHealth = startingHealth;
         }
+   
+
 
         //Move 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
@@ -64,6 +72,34 @@ public class CharacterMovement : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(gameObject);
+            string text = File.ReadAllText(Application.dataPath + "/Scripts/Menu/High-Score.txt");
+            int point = int.Parse(text);
+            
+            //Debug.Log("File"+point+"   current: "+hud.GetPoints());
+            if(point < hud.GetPoints())
+            {
+                Debug.Log("File" + point + "   current: " + hud.GetPoints());
+                StreamWriter output = null;
+                try
+                {
+                    output = File.CreateText(Application.dataPath + "/Scripts/Menu/High-Score.txt");
+                    output.WriteLine(hud.GetPoints());
+
+
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log(ex.ToString());
+                }
+                finally
+                {
+                    if (output != null)
+                    {
+                        output.Close();
+                    }
+                }
+            }
+            
         }
     }
    
