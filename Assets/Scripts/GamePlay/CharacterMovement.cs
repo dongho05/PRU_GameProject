@@ -150,7 +150,7 @@ public class CharacterMovement : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.CompareTag("frozen"))
+        if (other.gameObject.CompareTag("boom"))
         {
             Destroy(other.gameObject);
            

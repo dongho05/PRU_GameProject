@@ -22,6 +22,7 @@ TagManager:
   - EnemyBoss
   - frozen
   - bulletEnemy
+  - boom
   layers:
   - Default
   - TransparentFX
