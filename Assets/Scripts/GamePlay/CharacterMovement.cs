@@ -8,7 +8,6 @@ public class CharacterMovement : MonoBehaviour
     public float moveSpeed = 3f;
     public Joystick joystickMovement;
 
-
     public Rigidbody2D rb;
     public Camera cam;
 
@@ -75,7 +74,7 @@ public class CharacterMovement : MonoBehaviour
             //Debug.Log("File"+point+"   current: "+hud.GetPoints());
             if (point < hud.GetPoints())
             {
-                Debug.Log("File" + point + "   current: " + hud.GetPoints());
+                
                 StreamWriter output = null;
                 try
                 {
@@ -86,7 +85,7 @@ public class CharacterMovement : MonoBehaviour
                 }
                 catch (Exception ex)
                 {
-                    Debug.Log(ex.ToString());
+                    Debug.LogException(ex);
                 }
                 finally
                 {
@@ -109,7 +108,7 @@ public class CharacterMovement : MonoBehaviour
         startingHealth = currentHealth + (level * 10);
         currentHealth = startingHealth;
         UpdateHealthBar();
-        Debug.Log(currentHealth);
+       
     }
 
     public void IncreaseSpeed(int level)
@@ -119,21 +118,13 @@ public class CharacterMovement : MonoBehaviour
     void UpdateHealthBar()
     {
         healthSlider.value = currentHealth;
-        Debug.Log("Player: " + currentHealth);
+      
     }
 
 
     public void Health(int amount)
     {
-        //if (currentHealth + amount > 50)
-        //{
-        //    currentHealth = 50;
-        //}
-        //else
-        //{
-        //    currentHealth += amount;
-        //}
-        //UpdateHealthBar();
+        
         int newHealth = currentHealth + amount;
         if (newHealth > startingHealth)
         {
@@ -159,7 +150,15 @@ public class CharacterMovement : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if (other.gameObject.CompareTag("frozen"))
+        {
+            Destroy(other.gameObject);
+           
+        }
+
     }
+
+   
 
 
 }

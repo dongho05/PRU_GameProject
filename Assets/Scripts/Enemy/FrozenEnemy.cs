@@ -1,28 +1,32 @@
-
+using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
-public class GenerateBoss : MonoBehaviour
+public class FrozenEnemy : MonoBehaviour
 {
-    [SerializeField]
-    GameObject prefabCircle;
-    Timer timer;
+    private bool isMoving = true;
+    Vector3 endpoint;
 
-    // Start is called before the first frame update
-    void Start()
+    public void StopMovement(float duration)
     {
-        timer = gameObject.AddComponent<Timer>();
-        timer.Duration = 200;
-        timer.Run();
+        if (isMoving)
+        {
+            isMoving = false;
+            StartCoroutine(ResumeMovementAfterDelay(duration));
+        }
     }
 
-    List<GameObject> circles = new List<GameObject>();
-    // Update is called once per frame
+    IEnumerator ResumeMovementAfterDelay(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        isMoving = true;
+    }
+
     void Update()
     {
-        if (timer.Finished)
+        if (isMoving)
         {
-
             float screenWidth = Screen.width;
             float screenHeight = Screen.height;
             // save screen edges in world coordinates
@@ -38,11 +42,12 @@ public class GenerateBoss : MonoBehaviour
             float screenRight = upperRightCornerWorld.x;
             float screenTop = upperRightCornerWorld.y;
             float screenBottom = lowerLeftCornerWorld.y;
+            transform.position = Vector3.MoveTowards(transform.position, endpoint, Time.deltaTime);
 
-
-            circles.Add(Instantiate<GameObject>(prefabCircle, new Vector3(Random.Range(screenLeft, screenRight), Random.Range(screenBottom, screenTop), screenZ), Quaternion.identity));
-            timer.Duration = 200;
-            timer.Run();
+            if (Vector3.Distance(transform.position, endpoint) < 0.001f)
+            {
+                endpoint = new Vector3(Random.Range(screenLeft, screenRight), Random.Range(screenBottom, screenTop), -Camera.main.transform.position.z);
+            }
         }
     }
 }
